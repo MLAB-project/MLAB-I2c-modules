@@ -1,0 +1,5 @@
+smbus
+six
+numpy
+hidapi
+

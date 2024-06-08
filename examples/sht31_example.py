@@ -66,7 +66,7 @@ cfg.initialize()
 print ("SHT31 sensor readout example \r\n")
 sensor = cfg.get_device("sht")
 
-sensor.soft_reset()
+sensor.reset()
 time.sleep(0.1)
 
 #### Data Logging ###################################################

@@ -17,11 +17,13 @@ Dependencies are also available on pip (useful on systems without native package
 The latest version of pymlab library use true I²C transfers instead of SMBus transfers. It is needed by some sensors. Namely by SHT31, SHT25 etc.  Therefore an updated version of i2c-tools and python-smbus module is needed for correct working of pymlab library and some examples.
 The latest version of python-smbus could be installed from [this fork of i2c-tools](https://github.com/MLAB-project/i2c-tools).
 
-### Install in to Ubuntu python system
+### Install in to Ubuntu venv system
+
+Create venv by `python3 -m ven .venv` then activate it using `source .venv/bin/activate` in the python enviroment you can install the pymlab library: 
 
     $ git clone https://github.com/MLAB-project/pymlab
     $ cd pymlab/
-    $ sudo python3 setup.py develop
+    $ pip install -e .
 
 #### HIDAPI interface for the USBI2C01A  MLAB module (Optional support)
 

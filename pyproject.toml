@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pymlab"
+dynamic = ["version"]
+description = "Toolbox for interfacing I2C sensors."
+readme = "README.md"
+license = {text = "Lesser General Public License v3"}
+authors = [
+    {name = "Jan Milík", email = "milikjan@fit.cvut.cz"},
+    {name = "Roman Dvořák", email = "romandvorak@mlab.cz"},
+    {name = "Jakub Kákona", email = "kaklik@mlab.cz"}
+]
+keywords = ["TWI", "IIC", "I2C", "USB", "sensors", "drivers"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)",
+    "Natural Language :: Czech",
+    "Programming Language :: Python :: 2.6",
+    "Programming Language :: Python :: 2.7"
+]
+
+dependencies = [
+    "smbus",
+    "six",
+    "numpy",
+    "hidapi"
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["pymlab", "pymlab.sensors", "pymlab.tests"]
+
+[tool.setuptools_scm]
+version_scheme = "guess-next-dev"
+local_scheme = "node-and-date"
+
+

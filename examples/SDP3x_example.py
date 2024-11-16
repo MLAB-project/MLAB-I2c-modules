@@ -21,7 +21,7 @@ cfglist=[
         i2c = {
             #"port": port,
             "device": "hid",
-            "serial": "00A59713"
+            #"serial": "00A59713"
         },
         bus = [
             {
@@ -46,6 +46,7 @@ while True:
     try:
         dp, temp = sdp3x_sensor.readData()
         print(temp, dp)
+        time.sleep(0.2)
 
     # except KeyboardInterrupt:
     #     pass

@@ -9,19 +9,30 @@ from pymlab import config
 port = eval(sys.argv[1])
 
 #### Sensor Configuration ###########################################
+#cfg = config.Config(
+#    i2c = {
+#        "port": port, # I2C bus number
+#    },
+#
+#    bus = [
+#	    {
+#            "type": "i2chub",
+#            "address": 0x73,
+#
+#            "children": [
+#                {"name": "guage", "type": "lioncell", "channel": 7, },
+#            ],
+#	    },
+#    ],
+#)
+
 cfg = config.Config(
     i2c = {
         "port": port, # I2C bus number
     },
 
     bus = [
-	    {
-            "type": "i2chub",
-            "address": 0x73,
-
-            "children": [
-                {"name": "guage", "type": "lioncell", "channel": 7, },
-            ],
+	    {"name": "guage", "type": "lioncell", "channel": 7,
 	    },
     ],
 )
@@ -60,9 +71,9 @@ while True:
     print(" ".join([hex(i) for i in flash]))
 
     print("DesCap =", guage.DesignCapacity(), "mAh")
-    flash = guage.Chemistry()
-    print("Chemistry = ")
-    print(" ".join([hex(i) for i in flash]))
+    #flash = guage.Chemistry()
+    #print("Chemistry = ")
+    #print(" ".join([hex(i) for i in flash]))
 
     try:
         while True:
